@@ -2,13 +2,20 @@
   font-family: "HelveticaNeueR";
   src: url(./fonts/HelveticaNeue-Roman.otf);
 }
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
 :root {
-  --font-family: "HelveticaNeue", sans-serif;
+  --font-family: "HelveticaNeueR", sans-serif;
+}
+
+body {
+  background-color: #1a1a1a;
+  font-family: var(--font-family);
 }
 
 .container {
@@ -16,6 +23,8 @@
   padding: 0 10px;
   margin: 0 auto;
 }
+
+/* Header */
 header {
   background: #373a3c;
   border-bottom: 3px solid #979797;
@@ -34,12 +43,14 @@ header {
   flex-wrap: wrap;
   gap: 20px;
 }
+
 .header-container li {
   display: flex;
   align-items: center;
   gap: 6px;
   cursor: pointer;
 }
+
 .header-container a {
   text-decoration: none;
   font-family: var(--font-family);
@@ -48,6 +59,7 @@ header {
   line-height: 100%;
   color: rgba(255, 255, 255, 0.5);
 }
+
 .nav-list {
   display: flex;
   align-items: center;
@@ -55,6 +67,7 @@ header {
   list-style: none;
   flex-wrap: wrap;
 }
+
 .search-input {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 4px;
@@ -64,6 +77,7 @@ header {
   color: white;
   outline: none;
   width: 160px;
+  background: transparent;
 }
 
 /* Hero секция */
@@ -76,48 +90,47 @@ header {
   position: relative;
 }
 
-/* Контейнер */
 .hero-container {
   position: relative;
   z-index: 2;
   height: 648px;
 }
 
-/* Заголовок Star Wars */
+.hero-content {
+  position: relative;
+  height: 100%;
+}
+
 .hero-title {
   position: absolute;
   top: 175px;
-  right: 100px; /* Остаётся справа */
+  right: 100px;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 36px;
   color: #fff;
   margin: 0;
-  text-align: left; /* Текст внутри выровнен влево */
-  width: 100%; /* Добавлено для правильного выравнивания */
-  max-width: 300px; /* Ограничиваем ширину */
+  text-align: left;
+  max-width: 300px;
 }
 
-/* Подзаголовок Battlefront II */
 .hero-subtitle {
   position: absolute;
   top: 215px;
-  right: 100px; /* Остаётся справа */
+  right: 100px;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 24px;
   color: #fff;
   margin: 0;
-  text-align: left; /* Текст внутри выровнен влево */
-  width: 100%;
+  text-align: left;
   max-width: 300px;
 }
 
-/* Кнопки */
 .hero-buttons {
   position: absolute;
   top: 400px;
-  right: 100px; /* Остаётся справа */
+  right: 100px;
   display: flex;
   gap: 13px;
 }
@@ -133,34 +146,173 @@ header {
   border: none;
 }
 
-/* Первая кнопка Watch Trailer */
 .btn-primary {
   background-color: #8dd83d;
   color: white;
 }
 
+.btn-green {
+  background: #97f024;
+  color: #fff;
+  width: 170px;
+  height: 42px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
 
+.btn-dark {
+  background: #373a3c;
+  color: #fff;
+  width: 235px;
+  height: 42px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
 
+/* Game Details секция */
+.game-details {
+  background: #f8f9fa;
+  padding: 80px 0;
+  color: #373a3c;
+}
 
+.details-header {
+  text-align: center;
+  margin-bottom: 90px;
+}
 
+.details-header h2 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 36px;
+  color: #435766;
+  margin-bottom: 150px;
+}
 
+.details-btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
 
+.video-section {
+  margin: 60px 0;
+  display: flex;
+  justify-content: center;
+}
 
+.video-wrapper {
+  position: relative;
+  max-width: 900px;
+}
 
+.video-wrapper img {
+  width: 100%;
+  border-radius: 10px;
+}
 
+.info-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 100px;
+}
 
+.info-block.reverse {
+  flex-direction: row-reverse;
+}
 
+.info-text {
+  width: 40%;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 36px;
+  color: #435766;
+}
 
+.info-text h3 {
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 400;
+}
 
+.info-img {
+  width: 55%;
+}
 
-body {
-  background-color: #1a1a1a; /* Для контраста, так как секции выше темные */
+.info-img img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Technical Specifications секция - БЕЛЫЙ ФОН, БЕЗ ПОДЧЕРКИВАНИЙ */
+.tech-section {
+  background: #ffffff;
+  padding: 60px 0;
+}
+
+.tech-section .container {
+  max-width: 1130px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.tech-title {
+  font-size: 36px;
+  font-weight: 400;
+  color: #425665;
+  text-align: center;
+  margin-bottom: 50px;
   font-family: var(--font-family);
 }
 
-/* ----- Стили ФУТЕРА (основаны на вашем Footer.png) ----- */
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.spec-item {
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.5;
+  padding: 12px 0;
+  font-family: var(--font-family);
+  /* Убираем подчеркивание (border-bottom) */
+  border-bottom: none;
+}
+
+/* нижние кнопки */
+.bottom-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* Footer */
 .site-footer {
-  background-color: #151515; /* Почти черный, как на скриншоте */
+  background-color: #151515;
   padding: 48px 0 30px;
   border-top: 1px solid #2a2a2a;
   font-family: var(--font-family);
@@ -172,7 +324,6 @@ body {
   padding: 0 30px;
 }
 
-/* Верхняя часть футера: навигация и соцсети */
 .footer-top {
   display: flex;
   justify-content: space-between;
@@ -183,7 +334,6 @@ body {
   margin-bottom: 35px;
 }
 
-/* Левая часть: колонки ссылок */
 .footer-links {
   display: flex;
   flex-wrap: wrap;
@@ -195,12 +345,13 @@ body {
 }
 
 .link-column h4 {
-  color: #8dd83d; /* Акцентный зеленый, как в карточках */
+  color: #8dd83d;
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 18px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  font-family: var(--font-family);
 }
 
 .link-column ul {
@@ -216,13 +367,13 @@ body {
   text-decoration: none;
   font-size: 14px;
   transition: color 0.2s;
+  font-family: var(--font-family);
 }
 
 .link-column a:hover {
   color: #8dd83d;
 }
 
-/* Правая часть: иконки соцсетей (Follow Us) */
 .footer-social {
   text-align: right;
 }
@@ -233,6 +384,7 @@ body {
   font-weight: 600;
   margin-bottom: 18px;
   text-transform: uppercase;
+  font-family: var(--font-family);
 }
 
 .social-icons {
@@ -251,7 +403,6 @@ body {
   opacity: 1;
 }
 
-/* Нижняя часть футера: логотип, копирайт, язык */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -262,27 +413,11 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.footer-logo img {
-  height: 36px;
-  width: auto;
-}
-
 .footer-legal {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
   align-items: center;
-}
-
-.footer-legal a {
-  color: rgba(255, 255, 255, 0.5);
-  text-decoration: none;
-  transition: color 0.2s;
-  font-size: 12px;
-}
-
-.footer-legal a:hover {
-  color: #8dd83d;
 }
 
 .language-selector {
@@ -298,16 +433,13 @@ body {
 .language-selector span {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.8);
-}
-
-.language-selector img {
-  width: 14px;
-  opacity: 0.7;
+  font-family: var(--font-family);
 }
 
 .copyright {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.4);
+  font-family: var(--font-family);
 }
 
 /* Адаптивность */
@@ -328,6 +460,21 @@ body {
   .footer-links {
     gap: 30px;
   }
+  
+  .specs-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .tech-title {
+    font-size: 28px;
+  }
+  
+  .bottom-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -338,12 +485,63 @@ body {
   .footer-container {
     padding: 0 20px;
   }
+  .hero-title,
+  .hero-subtitle,
+  .hero-buttons {
+    right: 20px;
+  }
+  .hero-title {
+    top: 150px;
+    font-size: 28px;
+  }
+  .hero-subtitle {
+    top: 190px;
+    font-size: 18px;
+  }
+  .hero-buttons {
+    top: 350px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .info-text {
+    width: 100%;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .info-text h3 {
+    font-size: 24px;
+  }
+  .info-block {
+    flex-direction: column;
+  }
+  .info-block.reverse {
+    flex-direction: column;
+  }
+  .info-img {
+    width: 100%;
+  }
+  .details-header h2 {
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+  .details-btns {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .tech-section {
+    padding: 40px 0;
+  }
+  
+  .tech-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .spec-item {
+    font-size: 14px;
+    padding: 10px 0;
+  }
 }
-
-/* Стилизация маленькой иконки и стрелок (как в вашем дизайне) */
-.small-icon {
-  width: 14px;
-  margin-left: 4px;
-  vertical-align: middle;
-}
-
